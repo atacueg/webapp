@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Título de la página</title>
+    <!-- CSS para el tema minimalista en bronce y oro -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/minimal.css') }}">
+  </head>
+  <body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo de la empresa">
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container">
+      {% block contenido %}
+      {% endblock %}
+    </div>
+
+    <!-- Footer con información de la empresa y redes sociales -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Información de la empresa</p>
+            <p>Teléfono: 0542 080785</p>
+            <p>Dirección: Imola</p>
+          </div>
+          <div class="col-md-6">
+            <p>Síguenos en redes sociales:</p>
+            <ul class="redes-sociales">
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts necesarios para el funcionamiento de la página -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  </body>
+</html>
