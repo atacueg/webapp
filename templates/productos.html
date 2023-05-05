@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+  <h1>Productos</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Categoría</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+        <tr>
+          <td>{{ producto[1] }}</td>
+          <td>{{ producto[2] }}</td>
+          <td>{{ producto[3] }}</td>
+          <td>{{ producto[4] }}</td>
+          <td><img src="{{ url_for('static', filename='imagenes/' + producto[5].decode('utf-8')) }}" alt="{{ producto[1] }}" width="100"></td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
